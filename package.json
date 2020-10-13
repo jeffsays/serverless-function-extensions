@@ -1,5 +1,5 @@
 {
-  "name": "serverless-iamroles-per-function",
+  "name": "serverless-iamroles",
   "private": false,
   "version": "2.1.0",
   "engines": {
