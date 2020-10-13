@@ -10,7 +10,7 @@
 A Serverless plugin to easily define IAM roles per function via the use of `iamRoleStatements` at the function definition block. 
 
 ## Note
-This is a temporarily published package until this issue gets fixed or merged: [](https://github.com/functionalone/serverless-iam-roles-per-function/issues/52)
+This is a temporarily published package until this issue gets fixed or merged: [https://github.com/functionalone/serverless-iam-roles-per-function/issues/52]()
 
 ## Installation
 ```
