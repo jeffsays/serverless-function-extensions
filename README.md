@@ -9,16 +9,19 @@
 
 A Serverless plugin to easily define IAM roles per function via the use of `iamRoleStatements` at the function definition block. 
 
+## Note
+This is a temporarily published package until this issue gets fixed or merged: [](https://github.com/functionalone/serverless-iam-roles-per-function/issues/52)
+
 ## Installation
 ```
-npm install --save-dev serverless-iam-roles-per-function
+npm install --save-dev serverless-iamroles
 ```
 
 Add the plugin to serverless.yml:
 
 ```yaml
 plugins:
-  - serverless-iam-roles-per-function
+  - serverless-iamroles
 ```
 
 **Note**: Node 6.10 or higher runtime required.
@@ -128,15 +131,15 @@ functions:
 
 **Note**: Serverless Framework provides support for defining custom IAM roles on a per function level through the use of the `role` property and creating CloudFormation resources, as documented [here](https://serverless.com/framework/docs/providers/aws/guide/iam#custom-iam-roles). This plugin doesn't support defining both the `role` property and `iamRoleStatements` at the function level.
 
-[npm-image]:https://img.shields.io/npm/v/serverless-iam-roles-per-function.svg
-[npm-url]:http://npmjs.org/package/serverless-iam-roles-per-function
+[npm-image]:https://img.shields.io/npm/v/serverless-iamroles.svg
+[npm-url]:http://npmjs.org/package/serverless-iamroles
 [sls-image]:http://public.serverless.com/badges/v3.svg
 [sls-url]:http://www.serverless.com
-[travis-image]:https://travis-ci.org/functionalone/serverless-iam-roles-per-function.svg?branch=master
-[travis-url]:https://travis-ci.org/functionalone/serverless-iam-roles-per-function
-[david-image]:https://david-dm.org/functionalone/serverless-iam-roles-per-function/status.svg
-[david-url]:https://david-dm.org/functionalone/serverless-iam-roles-per-function
-[coveralls-image]:https://coveralls.io/repos/github/functionalone/serverless-iam-roles-per-function/badge.svg?branch=master
-[coveralls-url]:https://coveralls.io/github/functionalone/serverless-iam-roles-per-function?branch=master
-[downloads-image]:https://img.shields.io/npm/dm/serverless-iam-roles-per-function.svg
+[travis-image]:https://travis-ci.org/andersquist/serverless-iam-roles-per-function.svg?branch=main
+[travis-url]:https://travis-ci.org/andersquist/serverless-iam-roles-per-function
+[david-image]:https://david-dm.org/andersquist/serverless-iam-roles-per-function/status.svg
+[david-url]:https://david-dm.org/andersquist/serverless-iam-roles-per-function
+[coveralls-image]:https://coveralls.io/repos/github/andersquist/serverless-iam-roles-per-function/badge.svg?branch=main
+[coveralls-url]:https://coveralls.io/github/andersquist/serverless-iam-roles-per-function?branch=main
+[downloads-image]:https://img.shields.io/npm/dm/serverless-iamroles.svg
 
