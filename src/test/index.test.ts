@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 // eslint-disable-next-line import/no-unresolved
-const Serverless = require('serverless/lib/Serverless');
+const Serverless = require('serverless/lib/serverless');
 const funcWithIamTemplate = require('../../src/test/funcs-with-iam.json');
 
 describe('plugin tests', function (this: any) {
