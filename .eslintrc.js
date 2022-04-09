@@ -16,9 +16,7 @@ module.exports = {
     node: true,
     mocha: true,
   },
-  plugins: [
-    'import',
-  ],
+  plugins: ['import'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -42,7 +40,7 @@ module.exports = {
     'import/no-named-as-default': ERROR,
     'import/no-unresolved': [ERROR, { commonjs: true, amd: true }],
     'import/no-cycle': ['error', { maxDepth: 9999 }],
-    indent: [ERROR, 2, { SwitchCase: 1 }],
+    'indent': [ERROR, 2, { SwitchCase: 1 }],
     'max-len': [ERROR, 120],
     'newline-per-chained-call': ERROR,
     'no-confusing-arrow': ERROR,
@@ -52,38 +50,53 @@ module.exports = {
     'linebreak-style': OFF,
     'no-trailing-spaces': ERROR,
     'no-cond-assign': [ERROR, 'except-parens'],
-    'no-unused-expressions': [ERROR, { allowShortCircuit: true, allowTernary: true }],
-    'sort-imports': [ERROR, {
-      ignoreCase: false,
-      ignoreDeclarationSort: true,
-      ignoreMemberSort: false,
-      memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-    }],
-    eqeqeq: [ERROR, 'always', { null: 'ignore' }],
-    quotes: [ERROR, 'single'],
+    'no-unused-expressions': [
+      ERROR,
+      { allowShortCircuit: true, allowTernary: true },
+    ],
+    'sort-imports': [
+      ERROR,
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+      },
+    ],
+    'eqeqeq': [ERROR, 'always', { null: 'ignore' }],
+    'quotes': [WARN, 'single'],
     // JSDoc Requirements
-    'require-jsdoc': [WARN, {
-      require: {
-        FunctionDeclaration: true,
-        MethodDefinition: true,
-        ClassDeclaration: false,
+    'require-jsdoc': [
+      WARN,
+      {
+        require: {
+          FunctionDeclaration: true,
+          MethodDefinition: true,
+          ClassDeclaration: false,
+        },
       },
-    }],
-    'valid-jsdoc': [ERROR, {
-      requireReturn: true,
-      requireReturnDescription: false,
-      requireParamDescription: false,
-      requireParamType: true,
-      requireReturnType: false,
-      preferType: {
-        Boolean: 'boolean', Number: 'number', object: 'Object', String: 'string',
+    ],
+    'valid-jsdoc': [
+      ERROR,
+      {
+        requireReturn: true,
+        requireReturnDescription: false,
+        requireParamDescription: false,
+        requireParamType: true,
+        requireReturnType: false,
+        preferType: {
+          Boolean: 'boolean',
+          Number: 'number',
+          object: 'Object',
+          String: 'string',
+        },
       },
-    }],
+    ],
   },
   settings: {
     'import/resolver': {
-      'node': {
-        'extensions': ['.js', '.jsx', '.ts', '.tsx'],
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
