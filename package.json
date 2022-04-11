@@ -1,9 +1,9 @@
 {
-  "name": "serverless-iam-roles-per-function",
+  "name": "serverless-iam-roles",
   "private": false,
   "version": "3.2.0",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "description": "A Serverless plugin to define IAM Role statements as part of the function definition block",
   "main": "dist/lib/index.js",
@@ -15,6 +15,7 @@
     "compile": "tsc",
     "watch": "tsc -w",
     "prepublishOnly": "npm run clean && npm run compile",
+    "semantic-release": "semantic-release",
     "release": "standard-version",
     "lint": "eslint ."
   },
@@ -22,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/functionalone/serverless-iam-roles-per-function"
+    "url": "https://github.com/andersquist/serverless-iam-roles-per-function"
   },
   "keywords": [
     "aws",
@@ -40,6 +41,14 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@serverless/enterprise-plugin": "^4.1.2",
     "@types/chai": "^4.2.14",
     "@types/lodash": "^4.14.165",
@@ -48,13 +57,17 @@
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "chai": "^4.2.0",
+    "commitizen": "^4.2.4",
     "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.14.0",
     "eslint-plugin-import": "^2.22.1",
     "mocha": "^8.2.1",
     "npm-get-version": "^1.0.2",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
+    "semantic-release": "^19.0.2",
+    "semantic-release-contributors": "^3.1.1",
     "serverless": "^3.12.0",
     "source-map-support": "^0.5.19",
     "standard-version": "^9.0.0",

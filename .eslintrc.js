@@ -40,7 +40,7 @@ module.exports = {
     'import/no-named-as-default': ERROR,
     'import/no-unresolved': [ERROR, { commonjs: true, amd: true }],
     'import/no-cycle': ['error', { maxDepth: 9999 }],
-    'indent': [ERROR, 2, { SwitchCase: 1 }],
+    'indent': [WARN, 2, { SwitchCase: 1 }],
     'max-len': [ERROR, 120],
     'newline-per-chained-call': ERROR,
     'no-confusing-arrow': ERROR,

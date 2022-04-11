@@ -29,6 +29,24 @@ jobs:
           flag-name: run-${{ matrix.node }}
           # This is a parallel build so need this
           parallel: true
+  
+  release:
+    name: release
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: npm install
+      - run: npm run compile
+      - run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 # As testing against multiple versions need this to
   # finish the parallel build
