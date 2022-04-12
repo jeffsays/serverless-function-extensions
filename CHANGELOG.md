@@ -1,3 +1,23 @@
+# [2.1.0](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v2.0.2...v2.1.0) (2022-04-12)
+
+
+### Bug Fixes
+
+* change PermissionsBoundary feature to add  suport for cloudformation functions ([#70](https://github.com/andersquist/serverless-iam-roles-per-function/issues/70)) ([720dc0f](https://github.com/andersquist/serverless-iam-roles-per-function/commit/720dc0fa9f06eb7dd2feb7da968226ab503aa446))
+* **deps:** updated to latest serverless and making tests work ([d0259c8](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d0259c8b137c810673eb343bb0dc89d8bb4372f9))
+* Function properties schema validation fixed ([#63](https://github.com/andersquist/serverless-iam-roles-per-function/issues/63)) ([1f81264](https://github.com/andersquist/serverless-iam-roles-per-function/commit/1f81264af97623ca4a93c236ac32565661c1f386))
+* Support for Serverless v2.5.0 ([#53](https://github.com/andersquist/serverless-iam-roles-per-function/issues/53)) ([09e56ae](https://github.com/andersquist/serverless-iam-roles-per-function/commit/09e56ae8e4530fff656b6d238d42879fe4e68237))
+
+
+### Features
+
+* add support to PermissionsBoundary ([d68046e](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d68046ee4bf773bbbbe852d9ae3053cf96818640))
+* Docs: added contributing section ([d9715ba](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d9715ba6495b6b7eeab22cc15d88447429751449))
+* nodejs 12 support ([#32](https://github.com/andersquist/serverless-iam-roles-per-function/issues/32)) ([4dd58a2](https://github.com/andersquist/serverless-iam-roles-per-function/commit/4dd58a29cad7efc50bc8cf0c58236e8fbca43674))
+* schema validation ([abbc8af](https://github.com/andersquist/serverless-iam-roles-per-function/commit/abbc8afcc316c63d8dcb1fb77a9d2154b879e1b4))
+* Support new provider.iam property ([6e20297](https://github.com/andersquist/serverless-iam-roles-per-function/commit/6e2029709766ac5b08f09953a3ddc13ef73b131a)), closes [#73](https://github.com/andersquist/serverless-iam-roles-per-function/issues/73)
+* Use resolved region name in counting length of role name ([#33](https://github.com/andersquist/serverless-iam-roles-per-function/issues/33)) ([f9fd677](https://github.com/andersquist/serverless-iam-roles-per-function/commit/f9fd67785d787271a4a7db9184c7bf45c3b226ef)), closes [#26](https://github.com/andersquist/serverless-iam-roles-per-function/issues/26)
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
