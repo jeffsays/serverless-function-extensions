@@ -3,13 +3,6 @@
 
 ### Bug Fixes
 
-* **deps:** updated to latest serverless and making tests work ([d0259c8](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d0259c8b137c810673eb343bb0dc89d8bb4372f9))
-
-# [2.1.0](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v2.0.2...v2.1.0) (2022-04-12)
-
-
-### Bug Fixes
-
 * change PermissionsBoundary feature to add  suport for cloudformation functions ([#70](https://github.com/andersquist/serverless-iam-roles-per-function/issues/70)) ([720dc0f](https://github.com/andersquist/serverless-iam-roles-per-function/commit/720dc0fa9f06eb7dd2feb7da968226ab503aa446))
 * **deps:** updated to latest serverless and making tests work ([d0259c8](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d0259c8b137c810673eb343bb0dc89d8bb4372f9))
 * Function properties schema validation fixed ([#63](https://github.com/andersquist/serverless-iam-roles-per-function/issues/63)) ([1f81264](https://github.com/andersquist/serverless-iam-roles-per-function/commit/1f81264af97623ca4a93c236ac32565661c1f386))
