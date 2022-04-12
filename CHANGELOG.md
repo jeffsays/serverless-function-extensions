@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.1...v3.2.2) (2022-04-12)
+
+
+### Bug Fixes
+
+* trigger release due to semantic relase config ([4b0ddbd](https://github.com/andersquist/serverless-iam-roles-per-function/commit/4b0ddbd8dbb0ce8cb5c7365d8f8f480d5ef612ee))
+
 ## [3.2.1](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.0...v3.2.1) (2022-04-12)
 
 
