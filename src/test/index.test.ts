@@ -216,7 +216,7 @@ describe('plugin tests', function (this: any) {
           // some validation that the error we throw is what we expect
           const msg: string = error.message;
           assert.isString(msg);
-          assert.isTrue(msg.startsWith('serverless-iam-roles: ERROR:'));
+          assert.isTrue(msg.startsWith('serverless-iamroles: ERROR:'));
           assert.isTrue(msg.includes(longName));
           assert.isTrue(msg.endsWith('iamRoleStatementsName.'));
         }
@@ -448,7 +448,7 @@ describe('plugin tests', function (this: any) {
         } catch (error: any) {
           const msg: string = error.message;
           assert.isString(msg);
-          assert.isTrue(msg.startsWith('serverless-iam-roles: ERROR:'));
+          assert.isTrue(msg.startsWith('serverless-iamroles: ERROR:'));
           assert.isTrue(msg.includes('testing'));
         }
       });
@@ -462,7 +462,7 @@ describe('plugin tests', function (this: any) {
       // set defaultInherit
       _.set(
         serverless.service,
-        'custom.serverless-iam-roles.defaultInherit',
+        'custom.serverless-iamroles.defaultInherit',
         true,
       );
       // change helloInherit to false for testing
@@ -549,7 +549,7 @@ describe('plugin tests', function (this: any) {
       it('should add permission policy arn when there is iamGlobalPermissionsBoundary defined', () => {
         const compiledResources =
           serverless.service.provider.compiledCloudFormationTemplate.Resources;
-        serverless.service.custom['serverless-iam-roles'] = {
+        serverless.service.custom['serverless-iamroles'] = {
           iamGlobalPermissionsBoundary: {
             'Fn::Sub': 'arn:aws:iam::xxxxx:policy/permissions_boundary',
           },
