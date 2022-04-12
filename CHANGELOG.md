@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.0...v3.2.1) (2022-04-12)
+
+
+### Bug Fixes
+
+* **deps:** updated to latest serverless and making tests work ([d0259c8](https://github.com/andersquist/serverless-iam-roles-per-function/commit/d0259c8b137c810673eb343bb0dc89d8bb4372f9))
+
 # [2.1.0](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v2.0.2...v2.1.0) (2022-04-12)
 
 
