@@ -1,3 +1,10 @@
+## [3.2.3](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.2...v3.2.3) (2022-04-12)
+
+
+### Bug Fixes
+
+* **deps:** bump glob-parent from 5.1.1 to 5.1.2 ([338e222](https://github.com/andersquist/serverless-iam-roles-per-function/commit/338e222bd46712059d7afa3ad27f7ba59c66f7b0))
+
 ## [3.2.2](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.1...v3.2.2) (2022-04-12)
 
 
