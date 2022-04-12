@@ -2,31 +2,30 @@
 
 [![serverless][sls-image]][sls-url] 
 [![npm package][npm-image]][npm-url] 
-[![Build Status][travis-image]][travis-url] 
+[![Build Status][build-image]][build-url] 
 [![Coverage Status][coveralls-image]][coveralls-url] 
-[![Dependencies Status][david-image]][david-url]
 [![Downloads][downloads-image]][npm-url] 
 
 A Serverless plugin to easily define IAM roles per function via the use of `iamRoleStatements` at the function definition block. 
 
 ## Installation
 ```
-npm install --save-dev serverless-iam-roles-per-function
+npm install --save-dev serverless-iamroles
 ```
 
 Or if you want to try out the `next` upcoming version:
 ```
-npm install --save-dev serverless-iam-roles-per-function@next
+npm install --save-dev serverless-iamroles@next
 ```
 
 Add the plugin to serverless.yml:
 
 ```yaml
 plugins:
-  - serverless-iam-roles-per-function
+  - serverless-iamroles
 ```
 
-**Note**: Node 6.10 or higher runtime required.
+**Note**: Node 12 or higher runtime required.
 
 ## Usage
 
@@ -124,7 +123,7 @@ If you wish to change the default behavior to `inherit` instead of `override` it
 
 ```yaml
 custom:
-  serverless-iam-roles-per-function:
+  serverless-iamroles:
     defaultInherit: true
 ```
 ## Role Names
@@ -173,7 +172,7 @@ You can set permissionsBoundary for all roles with iamGlobalPermissionsBoundary 
 
 ```yaml
 custom:
-  serverless-iam-roles-per-function:
+  serverless-iamroles:
     iamGlobalPermissionsBoundary: !Sub arn:aws:iam::xxxx:policy/permissions-boundary-policy
 ```
 
@@ -183,8 +182,8 @@ For more information, see [Permissions Boundaries](https://docs.aws.amazon.com/I
 ## Contributing
 Contributions are welcome and appreciated. 
 
-* Before opening a PR it is best to first open an [issue](https://github.com/functionalone/serverless-iam-roles-per-function/issues/new). Describe in the issue what you want you plan to implement/fix. Based on the feedback in the issue, you should be able to plan how to implement your PR. 
-* Once ready, open a [PR](https://github.com/functionalone/serverless-iam-roles-per-function/compare) to contribute your code.
+* Before opening a PR it is best to first open an [issue](https://github.com/andersquist/serverless-iam-roles-per-function/issues/new). Describe in the issue what you want you plan to implement/fix. Based on the feedback in the issue, you should be able to plan how to implement your PR. 
+* Once ready, open a [PR](https://github.com/andersquist/serverless-iam-roles-per-function/compare) to contribute your code.
 * To help updating the [CHANGELOG.md](CHANGELOG.md) file, we use [standard-version](https://github.com/conventional-changelog/standard-version). Make sure to use conventional commit messages as specified at: https://www.conventionalcommits.org/en/v1.0.0/.
 * Update the release notes at [CHANGELOG.md](CHANGELOG.md) and bump the version by running:
   ```
@@ -192,10 +191,10 @@ Contributions are welcome and appreciated.
   ```
 * Examine the [CHANGELOG.md](CHANGELOG.md) and update if still required.
 * Don't forget to commit the files modified by `npm run release` (we have the auto-commit option disabled by default).
-* Once the PR is approved and merged into master, travis-ci will automatically tag the version you created and deploy to npmjs under the `next` tag. You will see your version deployed at: https://www.npmjs.com/package/serverless-iam-roles-per-function?activeTab=versions.
+* Once the PR is approved and merged into master, travis-ci will automatically tag the version you created and deploy to npmjs under the `next` tag. You will see your version deployed at: https://www.npmjs.com/package/serverless-iamroles?activeTab=versions.
 * Test your deployed version by installing with the `next` tag. For example:
   ```
-  npm install --save-dev serverless-iam-roles-per-function@next
+  npm install --save-dev serverless-iamroles@next
   ``` 
 
 ## Publishing a Production Release (Maintainers)
@@ -206,7 +205,7 @@ Once a contributed PR (or multiple PRs) have been merged into `master`, there is
 ![Example PR](https://user-images.githubusercontent.com/1395797/101236848-1866e180-36dd-11eb-9281-6c726d15e4f1.png)
 
 * Once approved by another maintainer, merge the PR.
-* Make sure to check after the Travis CI build completes that the release has been published to the `latest` tag on [nmpjs](https://www.npmjs.com/package/serverless-iam-roles-per-function?activeTab=versions). 
+* Make sure to check after the build completes that the release has been published to the `latest` tag on [nmpjs](https://www.npmjs.com/package/serverless-iamroles?activeTab=versions). 
 
 ## More Info
 
@@ -216,15 +215,12 @@ Once a contributed PR (or multiple PRs) have been merged into `master`, there is
 
 **Note**: Serverless Framework provides support for defining custom IAM roles on a per function level through the use of the `role` property and creating CloudFormation resources, as documented [here](https://serverless.com/framework/docs/providers/aws/guide/iam#custom-iam-roles). This plugin doesn't support defining both the `role` property and `iamRoleStatements` at the function level.
 
-[npm-image]:https://img.shields.io/npm/v/serverless-iam-roles-per-function.svg
-[npm-url]:http://npmjs.org/package/serverless-iam-roles-per-function
+[npm-image]:https://img.shields.io/npm/v/serverless-iamroles.svg
+[npm-url]:http://npmjs.org/package/serverless-iamroles
 [sls-image]:http://public.serverless.com/badges/v3.svg
 [sls-url]:http://www.serverless.com
-[travis-image]:https://travis-ci.com/functionalone/serverless-iam-roles-per-function.svg?branch=master
-[travis-url]:https://travis-ci.com/functionalone/serverless-iam-roles-per-function
-[david-image]:https://david-dm.org/functionalone/serverless-iam-roles-per-function/status.svg
-[david-url]:https://david-dm.org/functionalone/serverless-iam-roles-per-function
-[coveralls-image]:https://coveralls.io/repos/github/functionalone/serverless-iam-roles-per-function/badge.svg?branch=master
-[coveralls-url]:https://coveralls.io/github/functionalone/serverless-iam-roles-per-function?branch=master
-[downloads-image]:https://img.shields.io/npm/dm/serverless-iam-roles-per-function.svg
-
+[build-image]:https://github.com/andersquist/serverless-iam-roles-per-function/actions/workflows/build.yml/badge.svg
+[build-url]:https://github.com/andersquist/serverless-iam-roles-per-function/actions/workflows/build.yml
+[coveralls-image]:https://coveralls.io/repos/github/andersquist/serverless-iam-roles-per-function/badge.svg?branch=main
+[coveralls-url]:https://coveralls.io/github/andersquist/serverless-iam-roles-per-function?branch=main
+[downloads-image]:https://img.shields.io/npm/dm/serverless-iamroles.svg
