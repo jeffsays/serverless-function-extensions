@@ -1,3 +1,11 @@
+## [3.2.4](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.3...v3.2.4) (2022-05-29)
+
+
+### Bug Fixes
+
+* **deps:** bump ansi-regex from 3.0.0 to 3.0.1 ([eb2cbd0](https://github.com/andersquist/serverless-iam-roles-per-function/commit/eb2cbd0b9a834eb12f5006762a763d429bb595d4))
+* **deps:** bump trim-newlines from 3.0.0 to 3.0.1 ([10f3edb](https://github.com/andersquist/serverless-iam-roles-per-function/commit/10f3edb4c12e6fe5c98c06690892a85319e614f1))
+
 ## [3.2.3](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.2...v3.2.3) (2022-04-12)
 
 
