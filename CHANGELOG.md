@@ -1,3 +1,11 @@
+## [3.2.5](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.4...v3.2.5) (2022-06-04)
+
+
+### Bug Fixes
+
+* **deps:** bump npm from 8.6.0 to 8.11.0 ([007a2d5](https://github.com/andersquist/serverless-iam-roles-per-function/commit/007a2d53ad331a8d4aa24beeed7d01ff0902da5c))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([703f889](https://github.com/andersquist/serverless-iam-roles-per-function/commit/703f889c407f941f263d1435d36c9e37b6f65423))
+
 ## [3.2.4](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.3...v3.2.4) (2022-05-29)
 
 
