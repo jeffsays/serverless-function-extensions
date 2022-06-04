@@ -198,12 +198,14 @@ class ServerlessIamPerFunctionPlugin {
    * @param {string} functionName
    * @param {string} roleName
    * @param {string} globalRoleName
+   * @param {boolean} disableLogs
    * @return the function resource name
    */
   updateFunctionResourceRole(
     functionName: string,
     roleName: string,
     globalRoleName: string,
+    disableLogs: boolean,
   ): string {
     const functionResourceName =
       this.serverless.providers.aws.naming.getLambdaLogicalId(functionName);
@@ -217,7 +219,7 @@ class ServerlessIamPerFunctionPlugin {
       _.isEmpty(functionResource.Properties) ||
       _.isEmpty(functionResource.Properties.Role) ||
       !_.isArray(functionResource.Properties.Role['Fn::GetAtt']) ||
-      !_.isArray(functionResource.DependsOn)
+      (!_.isArray(functionResource.DependsOn) && !disableLogs)
     ) {
       this.throwError(
         'Function Resource is not in expected format. For function name: ' +
@@ -225,7 +227,11 @@ class ServerlessIamPerFunctionPlugin {
       );
     }
     functionResource.DependsOn = [roleName].concat(
-      functionResource.DependsOn.filter((val: any) => val !== globalRoleName),
+      functionResource.DependsOn
+        ? functionResource.DependsOn.filter(
+            (val: any) => val !== globalRoleName,
+          )
+        : [],
     );
     functionResource.Properties.Role['Fn::GetAtt'][0] = roleName;
     return functionResourceName;
@@ -348,24 +354,26 @@ class ServerlessIamPerFunctionPlugin {
     const policyStatements: Statement[] = [];
     functionIamRole.Properties.Policies[0].PolicyDocument.Statement =
       policyStatements;
-    // set log statements
-    policyStatements[0] = {
-      Effect: 'Allow',
-      Action: [
-        'logs:CreateLogStream',
-        'logs:CreateLogGroup',
-        'logs:PutLogEvents',
-      ],
-      Resource: [
-        {
-          'Fn::Sub':
-            'arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}' +
-            `:log-group:${this.serverless.providers.aws.naming.getLogGroupName(
-              functionObject.name,
-            )}:*:*`,
-        },
-      ],
-    };
+    // set log statements if not logs are diabled
+    if (!functionObject.disableLogs) {
+      policyStatements[0] = {
+        Effect: 'Allow',
+        Action: [
+          'logs:CreateLogStream',
+          'logs:CreateLogGroup',
+          'logs:PutLogEvents',
+        ],
+        Resource: [
+          {
+            'Fn::Sub':
+              'arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}' +
+              `:log-group:${this.serverless.providers.aws.naming.getLogGroupName(
+                functionObject.name,
+              )}:*:*`,
+          },
+        ],
+      };
+    }
     // remove managed policies
     functionIamRole.Properties.ManagedPolicyArns = [];
     // set vpc if needed
@@ -460,6 +468,7 @@ class ServerlessIamPerFunctionPlugin {
       functionName,
       roleResourceName,
       globalRoleName,
+      functionObject.disableLogs ?? false,
     );
     functionToRoleMap.set(functionResourceName, roleResourceName);
   }

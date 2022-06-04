@@ -428,6 +428,16 @@ describe('plugin tests', function (this: any) {
         }
       });
 
+      it('should handle disableLog being set', () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const compiledResources =
+          serverless.service.provider.compiledCloudFormationTemplate.Resources;
+        plugin.createRolesPerFunction();
+        const helloRole =
+          compiledResources.HelloDisableLogsIamRoleLambdaExecution;
+        assert.isNotEmpty(helloRole);
+      });
+
       it('should throw when external role is defined', () => {
         _.set(
           serverless.service,
