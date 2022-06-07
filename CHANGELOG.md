@@ -1,3 +1,10 @@
+## [3.2.6](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.5...v3.2.6) (2022-06-07)
+
+
+### Bug Fixes
+
+* handle disble logs correctly ([7bff688](https://github.com/andersquist/serverless-iam-roles-per-function/commit/7bff688e118e4fb04a194f82594282bfec73111a))
+
 ## [3.2.5](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.4...v3.2.5) (2022-06-04)
 
 
