@@ -1,3 +1,11 @@
+## [3.2.7](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.6...v3.2.7) (2022-10-22)
+
+
+### Bug Fixes
+
+* remove contributor release plugin ([4fcd817](https://github.com/andersquist/serverless-iam-roles-per-function/commit/4fcd817665cf96fd9f2a0c0cc3b3f0826d9ebcc7))
+* remove old dependency ([15d1bb8](https://github.com/andersquist/serverless-iam-roles-per-function/commit/15d1bb8dcfc8bb687043de7e01594df153317879))
+
 ## [3.2.6](https://github.com/andersquist/serverless-iam-roles-per-function/compare/v3.2.5...v3.2.6) (2022-06-07)
 
 
