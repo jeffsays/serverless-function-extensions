@@ -105,5 +105,8 @@
       "tag": true,
       "commit": true
     }
+  },
+  "volta": {
+    "node": "14.20.1"
   }
 }
