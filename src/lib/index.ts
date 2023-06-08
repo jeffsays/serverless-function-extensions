@@ -15,6 +15,7 @@ class ServerlessIamPerFunctionPlugin {
   serverless: any;
   awsPackagePlugin: any;
   defaultInherit: boolean;
+  defaultManagedPoliciesInherit: boolean;
 
   readonly PROVIDER_AWS = 'aws';
 
@@ -42,6 +43,7 @@ class ServerlessIamPerFunctionPlugin {
             type: 'object',
             properties: {
               defaultInherit: { type: 'boolean' },
+              defaultManagedPoliciesInherit: { type: 'boolean' },
               iamGlobalPermissionsBoundary: { $ref: '#/definitions/awsArn' },
             },
             additionalProperties: false,
@@ -59,6 +61,7 @@ class ServerlessIamPerFunctionPlugin {
           this.PROVIDER_AWS,
           {
             properties: {
+              iamRoleManagedPoliciesInherit: { type: 'boolean' },
               iamRoleStatementsInherit: { type: 'boolean' },
               iamRoleStatementsName: { type: 'string' },
               iamPermissionsBoundary: { $ref: '#/definitions/awsArn' },
@@ -77,6 +80,11 @@ class ServerlessIamPerFunctionPlugin {
     this.defaultInherit = _.get(
       this.serverless.service,
       `custom.${PLUGIN_NAME}.defaultInherit`,
+      false,
+    );
+    this.defaultManagedPoliciesInherit = _.get(
+      this.serverless.service,
+      `custom.${PLUGIN_NAME}.iamRoleManagedPoliciesInherit`,
       false,
     );
   }
@@ -119,8 +127,8 @@ class ServerlessIamPerFunctionPlugin {
         return missing.length === 0
           ? null
           : `statement ${i} is missing the following properties: ${missing
-              .map((m) => m.join(' / '))
-              .join(', ')}`;
+            .map((m) => m.join(' / '))
+            .join(', ')}`;
       });
       const flawed = descriptions.filter((curr) => curr);
       if (flawed.length) {
@@ -229,8 +237,8 @@ class ServerlessIamPerFunctionPlugin {
     functionResource.DependsOn = [roleName].concat(
       functionResource.DependsOn
         ? functionResource.DependsOn.filter(
-            (val: any) => val !== globalRoleName,
-          )
+          (val: any) => val !== globalRoleName,
+        )
         : [],
     );
     functionResource.Properties.Role['Fn::GetAtt'][0] = roleName;
@@ -337,7 +345,7 @@ class ServerlessIamPerFunctionPlugin {
     }
     if (functionObject.role) {
       this.throwError(
-        "Define function with both 'role' and 'iamRoleStatements' is not supported. Function name: " +
+        'Define function with both \'role\' and \'iamRoleStatements\' is not supported. Function name: ' +
           functionName,
       );
     }
@@ -374,8 +382,6 @@ class ServerlessIamPerFunctionPlugin {
         ],
       };
     }
-    // remove managed policies
-    functionIamRole.Properties.ManagedPolicyArns = [];
     // set vpc if needed
     if (
       !_.isEmpty(functionObject.vpc) ||
@@ -416,6 +422,15 @@ class ServerlessIamPerFunctionPlugin {
       functionObject.iamRoleStatementsInherit ||
       (this.defaultInherit &&
         functionObject.iamRoleStatementsInherit !== false);
+    const isInheritManagedPolicies =
+      functionObject.iamRoleManagedPoliciesInherit ||
+      (this.defaultManagedPoliciesInherit &&
+        functionObject.iamRoleManagedPoliciesInherit !== false);
+
+    if (!isInheritManagedPolicies) {
+      // remove managed policies
+      functionIamRole.Properties.ManagedPolicyArns = [];
+    }
 
     // Since serverless 2.24.0 provider.iamRoleStatements is deprecated
     // https://github.com/serverless/serverless/blob/master/CHANGELOG.md#2240-2021-02-16
