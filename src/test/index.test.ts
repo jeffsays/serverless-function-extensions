@@ -421,7 +421,7 @@ describe('plugin tests', function (this: any) {
               assert.fail(
                 resource,
                 undefined,
-                "There shouldn't be extra roles beyond IamRoleLambdaExecution",
+                'There shouldn\'t be extra roles beyond IamRoleLambdaExecution',
               );
             }
           }
@@ -601,7 +601,7 @@ describe('plugin tests', function (this: any) {
       assert.isTrue(
         statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
           undefined,
-        "provider.iamRoleStatements values shouldn't exists",
+        'provider.iamRoleStatements values shouldn\'t exists',
       );
       assert.isObject(
         statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -618,7 +618,7 @@ describe('plugin tests', function (this: any) {
         assert.isTrue(
           statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
             undefined,
-          "provider.iamRoleStatements values shouldn't exists",
+          'provider.iamRoleStatements values shouldn\'t exists',
         );
         assert.isObject(
           statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -636,7 +636,7 @@ describe('plugin tests', function (this: any) {
         assert.isTrue(
           statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
             undefined,
-          "provider.iamRoleStatements values shouldn't exists",
+          'provider.iamRoleStatements values shouldn\'t exists',
         );
         assert.isObject(
           statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -654,7 +654,7 @@ describe('plugin tests', function (this: any) {
         assert.isTrue(
           statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
             undefined,
-          "provider.iamRoleStatements values shouldn't exists",
+          'provider.iamRoleStatements values shouldn\'t exists',
         );
         assert.isObject(
           statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -674,7 +674,7 @@ describe('plugin tests', function (this: any) {
         assert.isTrue(
           statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
             undefined,
-          "provider.iamRoleStatements values shouldn't exists",
+          'provider.iamRoleStatements values shouldn\'t exists',
         );
         assert.isObject(
           statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -694,7 +694,7 @@ describe('plugin tests', function (this: any) {
         assert.isTrue(
           statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
             undefined,
-          "provider.iamRoleStatements values shouldn't exists",
+          'provider.iamRoleStatements values shouldn\'t exists',
         );
         assert.isObject(
           statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),
@@ -725,7 +725,7 @@ describe('plugin tests', function (this: any) {
       assert.isTrue(
         statements.find((s) => s.Action[0] === 'xray:PutTelemetryRecords') ===
           undefined,
-        "old provider.iamRoleStatements shouldn't exists",
+        'old provider.iamRoleStatements shouldn\'t exists',
       );
       assert.isObject(
         statements.find((s) => s.Action[0] === 'dynamodb:GetItem'),

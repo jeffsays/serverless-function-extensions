@@ -1,11 +1,11 @@
 {
-  "name": "serverless-iamroles",
+  "name": "serverless-function-extensions",
   "private": false,
   "version": "3.2.0",
   "engines": {
     "node": ">=12"
   },
-  "description": "A Serverless plugin to define IAM Role statements as part of the function definition block",
+  "description": "A Serverless plugin extend resources supporting functions as part of the function definition block",
   "main": "dist/lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andersquist/serverless-iam-roles-per-function"
+    "url": "https://github.com/jeffsays/serverless-function-extensions"
   },
   "keywords": [
     "aws",
@@ -62,7 +62,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.14.0",
     "eslint-plugin-import": "^2.22.1",
-    "mocha": "^10.0.0",
+    "mocha": "^10.1.0",
     "npm-get-version": "^1.0.2",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
